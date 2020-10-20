@@ -6,6 +6,6 @@ sh setup.sh to install
 
 Test your build by running testsetup.sh and then extensionsort testdir
 
-extensionsort <directory_path> to sort a directory once
+`extensionsort <path to directory>` to sort a directory once
 
 Run `crontab -e` and append `* * * * * extensionsorter <path to directory>` to keep a directory sorted.
