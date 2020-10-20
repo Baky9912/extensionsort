@@ -1,7 +1,7 @@
 # extensionsort
 
-Run make to compile everything.
+sh setup.sh to install
 
-./extensionsort <directory_path>
+extensionsort <directory_path>
 
-You can test your build by running usetup.sh and then ./extensionsort testdir
+You can test your build by running usetup.sh and then extensionsort testdir
