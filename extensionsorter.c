@@ -1,7 +1,7 @@
 #include"sorter.h"
 
 int main(int argc, char **argv){
-	const char *usage = "Usage: ./extensionsorter <directory>\n";
+	const char *usage = "Usage: ./extensionsorter <directory>";
 
 	char *dir_path;
 	if(argc==1){
@@ -16,7 +16,7 @@ int main(int argc, char **argv){
 			dir_path[j]='\0';
 		}
 		if(j<0){
-			printf("%s",usage);
+			printf("%s\n",usage);
 			return 1;
 		}
 	}
@@ -25,5 +25,16 @@ int main(int argc, char **argv){
 		return 1;
 	}
 
-	sorter(dir_path);
+	DIR *base_dir = opendir(dir_path);
+	if(base_dir==NULL){
+		printf("Failed to open %s\n",dir_path);
+		printf("%s\n",usage);
+		return 1;
+	}
+	closedir(base_dir);
+
+	if((sorter(dir_path)==0) && delete_empty(dir_path)==0){
+		printf("Finished successfully\n");
+	}
+	return 0;
 }

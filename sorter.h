@@ -16,6 +16,7 @@ extern "C"{
 int is_directory(const char *path);
 char* get_extension(const char *path);
 int sorter(const char *path);
+int delete_empty(const char *path);
 
 #ifdef __cplusplus
 }

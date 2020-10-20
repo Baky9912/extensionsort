@@ -75,5 +75,33 @@ int sorter(const char *path){
 			}
 		}
 	}
+	closedir(base_dir);
 	return 0;
 }
+
+int delete_empty(const char* path){
+	DIR *base_dir = opendir(path);
+	if(base_dir==NULL){
+		printf("Failed to open %s\n",path);
+		return 1;
+	}
+	
+	unsigned int path_sz = strlen(path);
+	struct dirent *entry;
+	while((entry=readdir(base_dir))){
+		char *file_name = entry->d_name;
+		unsigned int file_name_sz = strlen(file_name);
+		char *file_path = malloc(path_sz + file_name_sz + 2);
+
+		strcpy(file_path,path);
+		file_path[path_sz]='/';
+		strcpy(file_path + path_sz + 1, file_name);
+		if(rmdir(file_path)==0){
+			printf("Removed %s\n",file_path);
+		}
+	}
+	closedir(base_dir);
+	return 0;
+}
+
+
