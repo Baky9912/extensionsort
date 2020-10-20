@@ -4,8 +4,8 @@ Sorts by extensions and deletes empty directories. It will not change directorie
 
 sh setup.sh to install
 
-extensionsort <directory_path> to sort a directory once
+Test your build by running testsetup.sh and then extensionsort testdir
 
-Test your build by running usetup.sh and then extensionsort testdir
+extensionsort <directory_path> to sort a directory once
 
 Run `crontab -e` and append `* * * * * extensionsorter <path to directory>` to keep a directory sorted.
