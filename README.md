@@ -8,7 +8,7 @@ extensionsort <directory_path> to sort a directory once
 
 Test your build by running usetup.sh and then extensionsort testdir
 
-Run crontab -e and append `* * * * * extensionsorter <path to directory>` to keep a directory sorted.
+Run `crontab -e` and append `* * * * * extensionsorter <path to directory>` to keep a directory sorted.
 
 ~/Downloads
 |-a.pdf
