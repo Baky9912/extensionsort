@@ -16,8 +16,12 @@ int is_directory(const char *path){
 
 char* get_extension(const char *path){
 	char *dot = strrchr(path,'.');
+	char *slash = strrchr(path,'/');
 	if(dot==NULL){
 		return "plain";
+	}
+	if(slash!=NULL && slash[1]=='.'){
+		return "dotfile";
 	}
 	else{
 		return dot+1;

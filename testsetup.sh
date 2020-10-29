@@ -8,3 +8,4 @@ touch testdir/f.jpg
 touch testdir/g.gz
 touch testdir/h.png
 touch testdir/i
+touch testdir/.j
